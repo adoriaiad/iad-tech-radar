@@ -1,23 +1,10 @@
-import d3 from 'd3';
+import * as d3 from 'd3';
 import { Entry, Point, Polar, Quadrant, RadarConfig, Ring } from "../models/type";
 
-export function radar_visualization(config: RadarConfig) {
-
+export function radar_visualization(config: RadarConfig, ref: SVGSVGElement) {
     // custom random number generator, to make random sequence reproducible
     // source: https://stackoverflow.com/questions/521295
     let seed = 42;
-    function random() {
-      const x = Math.sin(seed++) * 10000;
-      return x - Math.floor(x);
-    }
-  
-    function random_between(min: number, max: number) {
-      return min + random() * (max - min);
-    }
-  
-    function normal_between(min: number, max: number) {
-      return min + (random() + random()) * 0.5 * (max - min);
-    }
   
     // radial_min / radial_max are multiples of PI
     const quadrants: Quadrant[] = [
@@ -46,6 +33,55 @@ export function radar_visualization(config: RadarConfig) {
       { x: -675, y: -310 },
       { x: 450, y: -310 }
     ];
+  
+    // position each entry randomly in its segment
+    for (let i = 0; i < config.entries.length; i++) {
+      const entry = config.entries[i];
+      entry.segment = segment(entry.quadrant, entry.ring);
+      const point = entry.segment.random();
+      entry.x = point.x;
+      entry.y = point.y;
+      entry.color = entry.active || config.print_layout ?
+        config.rings[entry.ring].color : config.colors.inactive;
+    }
+  
+    // partition entries according to segments
+    const segmented = new Array(4);
+    for (let quadrant = 0; quadrant < 4; quadrant++) {
+      segmented[quadrant] = new Array(4);
+      for (let ring = 0; ring < 4; ring++) {
+        segmented[quadrant][ring] = [];
+      }
+    }
+    for (let i=0; i<config.entries.length; i++) {
+      const entry = config.entries[i];
+      segmented[entry.quadrant][entry.ring].push(entry);
+    }
+  
+    // assign unique sequential id to each entry
+    let id = 1;
+    for (const quadrant of [2,3,1,0]) {
+      for (let ring = 0; ring < 4; ring++) {
+        const entries = segmented[quadrant][ring];
+        entries.sort(function(a: Entry,b: Entry) { return a.label.localeCompare(b.label); })
+        for (let i=0; i<entries.length; i++) {
+          entries[i].id = "" + id++;
+        }
+      }
+    }
+
+    function random() {
+        const x = Math.sin(seed++) * 10000;
+        return x - Math.floor(x);
+      }
+    
+      function random_between(min: number, max: number) {
+        return min + random() * (max - min);
+      }
+    
+      function normal_between(min: number, max: number) {
+        return min + (random() + random()) * 0.5 * (max - min);
+      }
   
     function polar(cartesian: Point) {
       const x = cartesian.x;
@@ -122,42 +158,6 @@ export function radar_visualization(config: RadarConfig) {
       }
     }
   
-    // position each entry randomly in its segment
-    for (let i = 0; i < config.entries.length; i++) {
-      const entry = config.entries[i];
-      entry.segment = segment(entry.quadrant, entry.ring);
-      const point = entry.segment.random();
-      entry.x = point.x;
-      entry.y = point.y;
-      entry.color = entry.active || config.print_layout ?
-        config.rings[entry.ring].color : config.colors.inactive;
-    }
-  
-    // partition entries according to segments
-    const segmented = new Array(4);
-    for (let quadrant = 0; quadrant < 4; quadrant++) {
-      segmented[quadrant] = new Array(4);
-      for (let ring = 0; ring < 4; ring++) {
-        segmented[quadrant][ring] = [];
-      }
-    }
-    for (let i=0; i<config.entries.length; i++) {
-      const entry = config.entries[i];
-      segmented[entry.quadrant][entry.ring].push(entry);
-    }
-  
-    // assign unique sequential id to each entry
-    let id = 1;
-    for (const quadrant of [2,3,1,0]) {
-      for (let ring = 0; ring < 4; ring++) {
-        const entries = segmented[quadrant][ring];
-        entries.sort(function(a: Entry,b: Entry) { return a.label.localeCompare(b.label); })
-        for (let i=0; i<entries.length; i++) {
-          entries[i].id = "" + id++;
-        }
-      }
-    }
-  
     function translate(x: number, y: number) {
       return "translate(" + x + "," + y + ")";
     }
@@ -171,7 +171,7 @@ export function radar_visualization(config: RadarConfig) {
       ].join(" ");
     }
   
-    const svg = d3.select("svg#" + config.svg_id)
+    const svg = d3.select(ref)//d3.select("svg#" + config.svg_id)
       .style("background-color", config.colors.background)
       .attr("width", config.width)
       .attr("height", config.height);
@@ -395,7 +395,7 @@ export function radar_visualization(config: RadarConfig) {
       let blip = d3.select(this);
   
       // blip link
-      if (d.active && d.hasOwnProperty("link") && d.link) {
+      if (d.active && Object.hasOwn(d, "link") && d.link) {
         blip.append("a")
           .attr("xlink:href", d.link);
   
@@ -408,15 +408,15 @@ export function radar_visualization(config: RadarConfig) {
       if (d.moved > 0) {
         blip.append("path")
           .attr("d", "M -11,5 11,5 0,-13 z") // triangle pointing up
-          .style("fill", d.color || "default");
+          .style("fill", d.color || "#a2918f");
       } else if (d.moved < 0) {
         blip.append("path")
           .attr("d", "M -11,-5 11,-5 0,13 z") // triangle pointing down
-          .style("fill", d.color || "default");
+          .style("fill", d.color || "#a2918f");
       } else {
         blip.append("circle")
           .attr("r", 9)
-          .attr("fill", d.color || "default");
+          .attr("fill", d.color || "#a2918f");
       }
   
       // blip text
@@ -447,4 +447,5 @@ export function radar_visualization(config: RadarConfig) {
       .velocityDecay(0.19) // magic number (found by experimentation)
       .force("collision", d3.forceCollide().radius(12).strength(0.85))
       .on("tick", ticked);
+    
   }

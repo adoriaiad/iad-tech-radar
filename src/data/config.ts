@@ -13,15 +13,16 @@ export const radarConfiguration: RadarConfig = {
     title: "IAD Tech Radar",
     date: "2023.02",
     quadrants: [
-      { name: "Languages" },
-      { name: "Infrastructure" },
-      { name: "Datastores" },
-      { name: "Data Management" },
+      { name: "Linguaggi" },
+      { name: "Metodologie" },
+      { name: "Tecnologie" },
+      { name: "Data Stores" },
+      { name: "Infrastrutture" },
     ],
     rings: [
       { name: "ADOPT", color: "#5ba300" },
-      //{ name: "TRIAL", color: "#009eb0" },
-      //{ name: "ASSESS", color: "#c7ba00" },
+      { name: "TRIAL", color: "#009eb0" },
+      { name: "ASSESS", color: "#c7ba00" },
       { name: "HOLD", color: "#e09b96" }
     ],
     print_layout: true,

@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './App.css';
+import { radarConfiguration } from './data/config';
+import { buildGraph } from './modules/graph';
+import { radar_visualization } from './modules/radar';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+interface IProps {
+  
+}
+
+interface IState {
+  
+}
+
+class App extends React.Component<IProps, IState> {
+  ref!: SVGSVGElement;
+  
+  componentDidMount() {
+    // activate   
+    radar_visualization(radarConfiguration, this.ref)
+  }
+
+  render() {
+    return (<div>
+      <svg ref={(ref: SVGSVGElement) => this.ref = ref}></svg>
+    </div>);
+  }
 }
 
 export default App;

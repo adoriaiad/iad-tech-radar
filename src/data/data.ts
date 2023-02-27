@@ -1,538 +1,207 @@
-  export const ENTRIES = [
-    {
-      "quadrant": 3,
-      "ring": 2,
-      "label": "AWS Athena",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 3,
-      "label": "AWS Data Pipeline",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 0,
-      "label": "AWS EMR",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 2,
-      "label": "AWS Glue",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 0,
-      "label": "Airflow",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 0,
-      "label": "Databricks",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 1,
-      "label": "Flink",
-      "link": "https://engineering.zalando.com/tags/apache-flink.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 1,
-      "label": "Google BigQuery",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 3,
-      "label": "Hadoop",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 1,
-      "label": "Presto",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 0,
-      "label": "Spark",
-      "link": "https://engineering.zalando.com/tags/apache-spark.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 3,
-      "label": "YARN",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 2,
-      "label": "dbt",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 0,
-      "label": "AWS DynamoDB",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 0,
-      "label": "AWS S3",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 3,
-      "label": "Aerospike",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 2,
-      "label": "Amazon MemoryDB",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 1,
-      "label": "Amazon Redshift",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 1,
-      "label": "Amazon Feature Store",
-      "active": true,
-      "moved": 1
-    },
-    {
-      "quadrant": 2,
-      "ring": 3,
-      "label": "Apache Cassandra",
-      "link": "https://engineering.zalando.com/tags/cassandra.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 3,
-      "label": "Consul",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 3,
-      "label": "CouchBase",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 1,
-      "label": "Druid",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 0,
-      "label": "Elasticsearch",
-      "link": "https://engineering.zalando.com/tags/elasticsearch.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 0,
-      "label": "Exasol",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 3,
-      "label": "HBase",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 1,
-      "label": "HDFS",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 3,
-      "label": "Hazelcast",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 3,
-      "label": "Memcached",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 3,
-      "label": "MongoDB",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 3,
-      "label": "MySQL",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 3,
-      "label": "Oracle DB",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 0,
-      "label": "PostgreSQL",
-      "link": "https://engineering.zalando.com/tags/postgresql.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 0,
-      "label": "Redis",
-      "link": "https://engineering.zalando.com/tags/redis.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 2,
-      "label": "RocksDB",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 3,
-      "label": "Solr",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 3,
-      "label": "ZooKeeper",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 0,
-      "label": "etcd",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 1,
-      "ring": 0,
-      "label": "AWS CloudFormation",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 1,
-      "ring": 0,
-      "label": "AWS CloudFront",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 1,
-      "ring": 1,
-      "label": "AWS Elemental MediaConvert",
-      "active": true,
-      "moved": 1
-    },
-    {
-      "quadrant": 1,
-      "ring": 1,
-      "label": "AWS Lambda",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 1,
-      "ring": 1,
-      "label": "AWS Step Functions",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 1,
-      "ring": 0,
-      "label": "Amazon SageMaker",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 1,
-      "ring": 0,
-      "label": "Docker",
-      "link": "https://engineering.zalando.com/tags/docker.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 1,
-      "ring": 0,
-      "label": "Kubernetes",
-      "link": "https://engineering.zalando.com/tags/kubernetes.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 1,
-      "ring": 0,
-      "label": "OpenTracing",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 1,
-      "ring": 3,
-      "label": "STUPS",
-      "link": "https://engineering.zalando.com/tags/stups.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 1,
-      "ring": 0,
-      "label": "Skipper",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 1,
-      "ring": 2,
-      "label": "Slurm",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 1,
-      "ring": 2,
-      "label": "WebAssembly",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 1,
-      "ring": 3,
-      "label": "ZMON",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 3,
-      "label": "Clojure",
-      "link": "https://engineering.zalando.com/tags/clojure.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 1,
-      "label": "Dart",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 0,
-      "label": "Go",
-      "link": "https://engineering.zalando.com/tags/golang.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 0,
-      "label": "GraphQL",
-      "link": "https://engineering.zalando.com/tags/graphql.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 3,
-      "label": "Haskell",
-      "link": "https://engineering.zalando.com/tags/haskell.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 0,
-      "label": "Java",
-      "link": "https://engineering.zalando.com/tags/java.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 0,
-      "label": "JavaScript",
-      "link": "https://engineering.zalando.com/tags/javascript.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 0,
-      "label": "Kotlin",
-      "link": "https://engineering.zalando.com/tags/kotlin.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 0,
-      "label": "OpenAPI (Swagger)",
-      "link": "https://engineering.zalando.com/tags/openapi.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 0,
-      "label": "Python",
-      "link": "https://engineering.zalando.com/tags/python.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 2,
-      "label": "R",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 3,
-      "label": "Rust",
-      "link": "https://engineering.zalando.com/tags/rust.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 0,
-      "label": "Scala",
-      "link": "https://engineering.zalando.com/tags/scala.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 0,
-      "label": "Swift",
-      "link": "https://engineering.zalando.com/tags/swift.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 0,
-      "ring": 0,
-      "label": "TypeScript",
-      "link": "https://engineering.zalando.com/tags/typescript.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 0,
-      "label": "AWS Kinesis",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 0,
-      "label": "AWS SNS",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 0,
-      "label": "AWS SQS",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 0,
-      "label": "Kafka",
-      "link": "https://engineering.zalando.com/tags/apache-kafka.html",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 0,
-      "label": "Nakadi",
-      "link": "https://nakadi.io",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
-      "ring": 1,
-      "label": "RabbitMQ",
-      "link": "https://engineering.zalando.com/tags/rabbitmq.html",
-      "active": true,
-      "moved": 0
-    }
-  ]
+import { QuadrantEnum, RingEnum } from "../models/type";
+
+const LANGUAGES = [
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.HOLD,
+    label: "JSP/JSX/JSF/ Struts",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.HOLD,
+    label: "Java Applet / Swing / AWT",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.HOLD,
+    label: "ASP / ASPx",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.HOLD,
+    label: "Java 8",
+    link: "https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.HOLD,
+    label: "C#",
+    link: "https://docs.microsoft.com/it-it/dotnet/csharp/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.HOLD,
+    label: "Visual Basic .NET",
+    link: "https://docs.microsoft.com/it-it/dotnet/visual-basic/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.ADOPT,
+    label: "GraphQL",
+    link: "https://graphql.org",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.ADOPT,
+    label: "OpenAPI (Swagger)",
+    link: "https://swaggeRingEnum.io/specification/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.ADOPT,
+    label: "TypeScript Base",
+    link: "https://www.typescriptlang.org/docs/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.ADOPT,
+    label: "TypeScript",
+    link: "https://www.typescriptlang.org/docs/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.ADOPT,
+    label: "React-native",
+    link: "https://reactnative.dev/docs/getting-started",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.ADOPT,
+    label: "React",
+    link: "https://reactjs.org/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.ADOPT,
+    label: "JavaScript",
+    link: "https://developeRingEnum.mozilla.org/en-US/docs/Web/JavaScript",
+    active: true,
+    moved: 0,
+  },
+];
+const INFRASTRUCTURES = [
+  {
+    quadrant: QuadrantEnum.Infrastructures,
+    ring: RingEnum.HOLD,
+    label: "JBoss EAP 6.4",
+    link: "https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Infrastructures,
+    ring: RingEnum.HOLD,
+    label: "IIS 8",
+    link: "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831725(v=ws.11)  ",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Infrastructures,
+    ring: RingEnum.HOLD,
+    label: ".NET 4.5",
+    link: "https://docs.microsoft.com/it-it/dotnet/framework/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Infrastructures,
+    ring: RingEnum.HOLD,
+    label: "Apache Tomcat 6",
+    link: "https://tomcat.apache.org/tomcat-6.0-doc/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Infrastructures,
+    ring: RingEnum.ADOPT,
+    label: "Docker",
+    link: "https://docs.dockeRingEnum.com/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Infrastructures,
+    ring: RingEnum.ADOPT,
+    label: "Kubernetes",
+    link: "https://kubernetes.io/it/docs/home/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Infrastructures,
+    ring: RingEnum.ADOPT,
+    label: "Istio Service Mesh",
+    link: "https://istio.io/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Infrastructures,
+    ring: RingEnum.ADOPT,
+    label: "Keycloak ID Management",
+    link: "https://www.keycloak.org/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Infrastructures,
+    ring: RingEnum.ADOPT,
+    label: "Argo CD / GitOps",
+    link: "https://argoproj.github.io/",
+    active: true,
+    moved: 0,
+  },
+];
+const DATASTORES = [
+  {
+    quadrant: QuadrantEnum.DataStores,
+    ring: RingEnum.HOLD,
+    label: "MS SQL Server 2019",
+    link: "https://www.microsoft.com/it-it/sql-server/sql-server-2019",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.DataStores,
+    ring: RingEnum.ADOPT,
+    label: "MongoDB",
+    active: true,
+    moved: 0,
+  },
+];
+const DATAMANAGEMENT = [
+  {
+    quadrant: QuadrantEnum.DataManagements,
+    ring: RingEnum.HOLD,
+    label: "Microsoft DTSX",
+    active: true,
+    moved: 0,
+  },
+];
+
+export const ENTRIES = LANGUAGES.concat(DATASTORES.concat(DATAMANAGEMENT.concat(INFRASTRUCTURES)));

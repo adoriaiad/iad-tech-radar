@@ -1,3 +1,17 @@
+export enum QuadrantEnum {
+    Languages,
+    Infrastructures,
+    DataStores,
+    DataManagements
+}
+
+export enum RingEnum {
+    ADOPT,
+    TRIAL,
+    ASSESS,
+    HOLD
+}
+
 export type Point = {
     x: number;
     y: number;
