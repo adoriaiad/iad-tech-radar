@@ -1,14 +1,32 @@
 {
-  "name": "zalando-tech-radar",
-  "version": "2022.5.0",
-  "description": "Visualizing our technology choices",
-  "homepage": "https://github.com/zalando/tech-radar#readme",
+  "name": "iad-tech-radar",
+  "version": "0.1.0",
+  "description": "Visualizing IAD technology choices",
   "repository": "https://github.com/zalando/tech-radar.git",
-  "license": "MIT",
-  "directories": {
-    "doc": "docs"
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.13",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "d3": "^7.8.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.0",
     "browser-sync": "^2.27.7",
     "eslint": "^5.7.0",
     "htmllint": "^0.7.2",
@@ -17,10 +35,22 @@
   "resolutions": {
     "ua-parser-js": "1.0.33"
   },
-  "scripts": {
-    "start": "browser-sync docs -w",
-    "lint": "npm run lint:js && npm run lint:html",
-    "lint:js": "eslint docs/*.js",
-    "lint:html": "htmllint docs/*.html"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
