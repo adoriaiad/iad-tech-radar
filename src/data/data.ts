@@ -223,6 +223,14 @@ const INFRASTRUCTURES: Entry[] = [
     active: true,
     moved: 0,
   },
+  {
+    quadrant: QuadrantEnum.Infrastructures,
+    ring: RingEnum.TRIAL, // o ADOPT???
+    label: "OPA Open Policy Agent",
+    link: "https://www.openpolicyagent.org/",
+    active: true,
+    moved: 0,
+  },
 ];
 
 const DATASTORES: Entry[] = [
@@ -295,6 +303,14 @@ const DATAMANAGEMENT: Entry[] = [
     quadrant: QuadrantEnum.DataManagements,
     ring: RingEnum.ADOPT,
     label: "Rabbit",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.DataManagements,
+    ring: RingEnum.TRIAL,
+    label: "Grafana", // VA QUI?
+    link: "https://grafana.com/grafana/",
     active: true,
     moved: 0,
   },
