@@ -2,7 +2,7 @@
   "name": "iad-tech-radar",
   "version": "0.1.0",
   "description": "Visualizing IAD technology choices",
-  "repository": "https://github.com/zalando/tech-radar.git",
+  "repository": "https://github.com/adoriaiad/iad-tech-radar",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
