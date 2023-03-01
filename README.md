@@ -1,117 +1,63 @@
-# Motivation
+# IAD Tech Radar
 
-At [Zalando](http://zalando.de), we maintain a [public Tech
-Radar](http://zalando.github.io/tech-radar/) to help our engineering teams
-align on technology choices. It is based on the [pioneering work
-by ThoughtWorks](https://www.thoughtworks.com/radar).
+Il tech radar è sostanzialmente un documento che riassume, sintetizza i cambiamenti nelle
+tecnologie IT, nasce da un innovativo progetto della società ThoughtWorks
 
-This repository contains the code to generate the visualization:
-[`radar.js`](/docs/radar.js) (based on [d3.js v4](https://d3js.org)).
-Feel free to use and adapt it for your own purposes.
+## Caratteristiche
 
-## Usage
 
-1. include `d3.js` and `radar.js`:
+Esso raggruppa gli elementi (tecnologie) e li posiziona in zone precise e appropriate per
+tracciare le informazioni sullo stato e la mobilità di una tecnologia:
+Abbiamo 4 quadranti:
+- Linguaggi e framework
+- Infrastrutture
+- Data Stores
+- Data Management
 
-```html
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="http://zalando.github.io/tech-radar/release/radar-0.7.js"></script>
+e 4 anelli:
+- ADOPT: Tecnologie di cui abbiamo molta fiducia per raggiungere i nostri obbiettivi.
+Tecnologie utilizzate in ambiente di produzione, considerate a basso rischio, consigliabili
+per essere ampiamente utilizzate.
+
+- TRIAL: Tecnologie che abbiamo visto funzionare con successo nel project work per
+risolvere un problema reale; prima seria esperienza di utilizzo che conferma i vantaggi e
+può scoprire i limiti. Le tecnologie TRIAL sono leggermente più rischiose; ma promettenti
+e con un chiaro potenziale valore aggiunto per noi; vale la pena investire alcuni sforzi di
+ricerca e prototipazione.
+
+- ASSESS: presentano rischi maggiori; sono spesso nuove e non ancora provate in azienda. Qualcuno
+all'interno dell’azienda potrebbe averne conoscenza e la promuove, o esiste un team che
+ha provato a fare dei prototipi.
+
+- HOLD: Tecnologie sconsigliate per essere utilizzate per nuovi progetti.
+per cui non vale la pena investire ulteriormente.
+Le tecnologie HOLD non dovrebbero essere utilizzate per nuovi progetti, ma generalmente
+se presenti in progetti esistenti vengono utilizzate per i processi di manutenzione.
+
+## Installation and starting app
+
+Iad Tech Radar requires [Node.js](https://nodejs.org/) v16+ to run and d3.
+
+Install the dependencies and devDependencies and start the server.
+
+```sh
+npm i
+npm start
 ```
 
-2. insert an empty `svg` tag:
 
-```html
-<svg id="radar"></svg>
-```
+## Link
 
-3. configure the radar visualization:
+- [Thoughtworks] - Thoughtworks project
+- [Zalando github] - Zalando repository used for this project
+- [D3 library] - D3 Data-Driven Documents
 
-```js
-radar_visualization({
-  svg_id: "radar",
-  width: 1450,
-  height: 1000,
-  colors: {
-    background: "#fff",
-    grid: "#bbb",
-    inactive: "#ddd"
-  },
-  title: "My Radar",
-  quadrants: [
-    { name: "Bottom Right" },
-    { name: "Bottom Left" },
-    { name: "Top Left" },
-    { name: "Top Right" }
-  ],
-  rings: [
-    { name: "INNER",  color: "#5ba300" },
-    { name: "SECOND", color: "#009eb0" },
-    { name: "THIRD",  color: "#c7ba00" },
-    { name: "OUTER",  color: "#e09b96" }
-  ],
-  print_layout: true,
-  links_in_new_tabs: true,
-  entries: [
-   {
-      label: "Some Entry",
-      quadrant: 3,          // 0,1,2,3 (counting clockwise, starting from bottom right)
-      ring: 2,              // 0,1,2,3 (starting from inside)
-      moved: -1             // -1 = moved out (triangle pointing down)
-                            //  0 = not moved (circle)
-                            //  1 = moved in  (triangle pointing up)
-   },
-    // ...
-  ]
-});
-```
 
-Entries are positioned automatically so that they don't overlap.
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
-As a working example, you can check out `docs/index.html` &mdash; the source of our [public Tech
-Radar](http://zalando.github.io/tech-radar/).
+   [Thoughtworks]: <https://www.thoughtworks.com/>
+   [Zalando github]: <https://github.com/zalando/tech-radar>
+   [D3 library]: <https://www.npmjs.com/package/d3>
 
-## Local Development
 
-1. install dependencies with yarn (or npm):
 
-```
-yarn 
-```
-
-2. start local dev server:
-
-```
-yarn start
-```
-
-3. your default browser should automatically open and show the url
- 
-```
-http://localhost:3000/
-```
-
-## License
-
-```
-The MIT License (MIT)
-
-Copyright (c) 2017-2022 Zalando SE
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-```
