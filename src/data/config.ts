@@ -11,13 +11,12 @@ export const radarConfiguration: RadarConfig = {
       inactive: "#ddd"
     },
     title: "IAD Tech Radar",
-    date: "2023.02",
+    date: "2023.03",
     quadrants: [
-      { name: "Linguaggi" },
-      { name: "Metodologie" },
-      { name: "Tecnologie" },
-      { name: "Data Stores" },
+      { name: "Linguaggi e Framework" },
       { name: "Infrastrutture" },
+      { name: "Data Stores" },
+      { name: "Data Management" },
     ],
     rings: [
       { name: "ADOPT", color: "#5ba300" },
@@ -27,7 +26,7 @@ export const radarConfiguration: RadarConfig = {
     ],
     print_layout: true,
     links_in_new_tabs: true,
-    // zoomed_quadrant: 0,
+    //zoomed_quadrant: 0,
     //ENTRIES
     entries: ENTRIES
     //ENTRIES

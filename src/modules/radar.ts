@@ -181,7 +181,7 @@ export function radar_visualization(config: RadarConfig, ref: SVGSVGElement) {
     //if ("zoomed_quadrant" in config) {
     //    svg.attr("viewBox", viewbox(config.zoomed_quadrant));
     //} else {
-    //    radar.attr("transform", translate(config.width / 2, config.height / 2));
+       // radar.attr("transform", translate(config.width / 2, config.height / 2));
     //}
   
     const grid = radar.append("g");
@@ -344,8 +344,9 @@ export function radar_visualization(config: RadarConfig, ref: SVGSVGElement) {
       .attr("d", "M 0,0 10,0 5,8 z")
       .style("fill", "#333");
   
-    function showBubble(d: Entry) {
-      if (d.active || config.print_layout) {
+    function showBubble(event: any) {
+      const d = event.currentTarget?.__data__ as Entry;
+      if (d?.active || config.print_layout) {
         const tooltip = d3.select("#bubble text")
           .text(d.label);
         const bbox = (tooltip?.node() as SVGAElement).getBBox();
@@ -362,19 +363,21 @@ export function radar_visualization(config: RadarConfig, ref: SVGSVGElement) {
       }
     }
   
-    function hideBubble(d: Entry) {
+    function hideBubble(event: any) {
       const bubble = d3.select("#bubble")
         .attr("transform", translate(0,0))
         .style("opacity", 0);
     }
   
-    function highlightLegendItem(d: Entry) {
+    function highlightLegendItem(event: any) {
+      const d = event.currentTarget?.__data__ as Entry;
       const legendItem = document.getElementById("legendItem" + d.id);
       legendItem?.setAttribute("filter", "url(#solid)");
       legendItem?.setAttribute("fill", "white");
     }
   
-    function unhighlightLegendItem(d: Entry) {
+    function unhighlightLegendItem(event: any) {
+      const d = event.currentTarget?.__data__ as Entry;
       const legendItem = document.getElementById("legendItem" + d.id);
       legendItem?.removeAttribute("filter");
       legendItem?.removeAttribute("fill");

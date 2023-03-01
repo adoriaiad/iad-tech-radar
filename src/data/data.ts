@@ -1,10 +1,10 @@
-import { QuadrantEnum, RingEnum } from "../models/type";
+import { Entry, QuadrantEnum, RingEnum } from "../models/type";
 
-const LANGUAGES = [
+const LANGUAGES: Entry[] = [
   {
     quadrant: QuadrantEnum.Languages,
     ring: RingEnum.HOLD,
-    label: "JSP/JSX/JSF/ Struts",
+    label: "JSP/JSX/JSF",
     active: true,
     moved: 0,
   },
@@ -19,6 +19,13 @@ const LANGUAGES = [
     quadrant: QuadrantEnum.Languages,
     ring: RingEnum.HOLD,
     label: "ASP / ASPx",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.HOLD,
+    label: "Java 6",
     active: true,
     moved: 0,
   },
@@ -65,14 +72,6 @@ const LANGUAGES = [
   {
     quadrant: QuadrantEnum.Languages,
     ring: RingEnum.ADOPT,
-    label: "TypeScript Base",
-    link: "https://www.typescriptlang.org/docs/",
-    active: true,
-    moved: 0,
-  },
-  {
-    quadrant: QuadrantEnum.Languages,
-    ring: RingEnum.ADOPT,
     label: "TypeScript",
     link: "https://www.typescriptlang.org/docs/",
     active: true,
@@ -102,8 +101,32 @@ const LANGUAGES = [
     active: true,
     moved: 0,
   },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.ADOPT,
+    label: "Python",
+    link: "https://www.python.org/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.ADOPT,
+    label: "Django",
+    link: "https://www.djangoproject.com/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Languages,
+    ring: RingEnum.ADOPT,
+    label: "Spring",
+    link: "https://spring.io/",
+    active: true,
+    moved: 0,
+  },
 ];
-const INFRASTRUCTURES = [
+const INFRASTRUCTURES: Entry[] = [
   {
     quadrant: QuadrantEnum.Infrastructures,
     ring: RingEnum.HOLD,
@@ -176,8 +199,33 @@ const INFRASTRUCTURES = [
     active: true,
     moved: 0,
   },
+  {
+    quadrant: QuadrantEnum.Infrastructures,
+    ring: RingEnum.ADOPT,
+    label: "AWS",
+    link: "https://aws.amazon.com/it/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Infrastructures,
+    ring: RingEnum.ADOPT,
+    label: "Digital Ocean",
+    link: "https://www.digitalocean.com/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.Infrastructures,
+    ring: RingEnum.ADOPT,
+    label: "Azure",
+    link: "https://azure.microsoft.com/it-it/products/devops",
+    active: true,
+    moved: 0,
+  },
 ];
-const DATASTORES = [
+
+const DATASTORES: Entry[] = [
   {
     quadrant: QuadrantEnum.DataStores,
     ring: RingEnum.HOLD,
@@ -190,15 +238,63 @@ const DATASTORES = [
     quadrant: QuadrantEnum.DataStores,
     ring: RingEnum.ADOPT,
     label: "MongoDB",
+    link: "https://www.mongodb.com/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.DataStores,
+    ring: RingEnum.ADOPT,
+    label: "Redis",
+    link: "https://redis.io/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.DataStores,
+    ring: RingEnum.HOLD,
+    label: "MySQL",
+    link: "https://www.mysql.com/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.DataStores,
+    ring: RingEnum.ADOPT,
+    label: "POSTGRESQL",
+    link: "https://www.postgresql.org/",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.DataStores,
+    ring: RingEnum.ADOPT,
+    label: "Elastic Search",
+    link: "https://www.elastic.co/",
     active: true,
     moved: 0,
   },
 ];
-const DATAMANAGEMENT = [
+
+const DATAMANAGEMENT: Entry[] = [
   {
     quadrant: QuadrantEnum.DataManagements,
     ring: RingEnum.HOLD,
     label: "Microsoft DTSX",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.DataManagements,
+    ring: RingEnum.ADOPT,
+    label: "Nats",
+    active: true,
+    moved: 0,
+  },
+  {
+    quadrant: QuadrantEnum.DataManagements,
+    ring: RingEnum.ADOPT,
+    label: "Rabbit",
     active: true,
     moved: 0,
   },
